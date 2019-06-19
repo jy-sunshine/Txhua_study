@@ -30,12 +30,12 @@ while getopts 'm:r:' OPT; do
 done
 shift $(($OPTIND - 1))
 
-if [ ${message} == "" ];then
+if [ "${message}" == "" ];then
 	echo "message is null"
 	exit;
 fi
 
-if [ ${origin} == "" ];then
+if [ "${origin}" == "" ];then
 	echo "origin is null";
 	exit;
 fi
@@ -47,8 +47,8 @@ git pull
 git add .
 
 # 提交文件
-git commit -m ${message}
+git commit -m "${message}"
 
 # 提交文件到远程仓库
-git push -u ${origin} master
+git push -u "${origin}" master
 
